@@ -7,3 +7,4 @@ Command List for running it:
     Este comando crea una imagen para el projecto
  
 2. "docker run -p 8080:8080 diegojavaschoolproject" Este comando crea un contendor con el projecto
+
