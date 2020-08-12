@@ -8,11 +8,11 @@
 		<version>2.3.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.paqueteriaApp</groupId>
-	<artifactId>JavaSchool2020</artifactId>
+	<groupId>com.shipping.app</groupId>
+	<artifactId>shipping-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JavaSchool2020</name>
-	<description>Project for JavaSchool 2020</description>
+	<name>ShippingApplication</name>
+	<description>Shipping app Project for JavaSchool 2020</description>
 
 	<properties>
 		<java.version>11</java.version>
