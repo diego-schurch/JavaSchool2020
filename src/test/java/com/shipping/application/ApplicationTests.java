@@ -1,10 +1,10 @@
-package com.paqueteriaApp.Application;
+package com.shipping.application;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class ShippingApplicationTests {
 
 	@Test
 	void contextLoads() {

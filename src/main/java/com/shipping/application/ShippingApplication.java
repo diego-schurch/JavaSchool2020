@@ -1,13 +1,13 @@
-package com.paqueteriaApp.Application;
+package com.shipping.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class ShippingApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ShippingApplication.class, args);
 	}
 
 }
