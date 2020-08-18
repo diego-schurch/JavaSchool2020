@@ -35,7 +35,7 @@ public class PackageTypesTests {
         when(packageTypeService.getPackageTypes()).thenReturn(testData);
 
         mvc.perform( MockMvcRequestBuilders
-                .get("/packageTypes")
+                .get("/package/types")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

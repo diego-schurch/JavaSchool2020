@@ -17,7 +17,7 @@ public class PackageTypeController {
     @Autowired
     private PackageTypeService packageTypeService;
 
-    @GetMapping(value = "/packageTypes", produces= {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value = "/package/types", produces= {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity getAllPackageTypes() throws JsonProcessingException {
 
         List<String> packageTypes = this.packageTypeService.getPackageTypes();

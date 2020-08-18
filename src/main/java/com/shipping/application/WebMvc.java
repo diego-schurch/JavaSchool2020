@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+//Allow CORPS requests in order to used the frontend on our local
 @Configuration
 public class WebMvc implements WebMvcConfigurer {
 
@@ -13,5 +14,6 @@ public class WebMvc implements WebMvcConfigurer {
 		registry.addMapping("/**")
 				.allowedMethods("*")
 				.allowedOrigins("*");
+
 	}
 }
