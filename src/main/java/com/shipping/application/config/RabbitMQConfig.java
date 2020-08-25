@@ -1,4 +1,4 @@
-package com.shipping.application.util.rabbitmq;
+package com.shipping.application.config;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
