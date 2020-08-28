@@ -1,5 +1,6 @@
-package com.shipping.application.packagetype;
+package com.shipping.application.controller;
 
+import com.shipping.application.service.PackageTypeService;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;

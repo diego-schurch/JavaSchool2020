@@ -1,7 +1,7 @@
 package com.shipping.application;
 
-import com.shipping.application.packagetype.PackageTypeController;
-import com.shipping.application.packagetype.PackageTypeService;
+import com.shipping.application.controller.PackageTypeController;
+import com.shipping.application.service.PackageTypeService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
