@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class RabbitMQTests {
@@ -26,7 +26,7 @@ class RabbitMQTests {
 
         String message = MessageSerializer.requestMessageToPlainTextJson(new RequestMessage("invalidMessage"));
         String receivedMessage = sender.sendRequest(message);
-        assertNull(receivedMessage);
+        assertEquals("Invalid request", receivedMessage);
     }
 
     @Test
