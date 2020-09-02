@@ -27,6 +27,7 @@ class RabbitMQTests {
         String message = MessageSerializer.requestMessageToPlainTextJson(new RequestMessage("invalidMessage"));
         String receivedMessage = sender.sendRequest(message);
         assertEquals("Invalid request", receivedMessage);
+
     }
 
     @Test
@@ -38,3 +39,4 @@ class RabbitMQTests {
 
     }
 }
+

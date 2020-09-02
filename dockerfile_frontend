@@ -1,0 +1,5 @@
+FROM python:latest
+WORKDIR /usr/local/
+COPY Frontend Frontend/
+EXPOSE 7000
+CMD cd Frontend && python -m http.server 7000
