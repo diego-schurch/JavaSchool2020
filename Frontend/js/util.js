@@ -28,11 +28,14 @@ function rest(method, path, success, payload){
 }
 
 function createOption(value){
-    console.log("options"+value);
     return $('<option>', { 
         value: value,
         text : value 
     });
+}
+
+function _isOptionValueValid(optionValue) {
+    return optionValue !== 'empty'
 }
 
 function fillShippingTable(shippingInformation){
