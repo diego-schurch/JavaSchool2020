@@ -2,7 +2,7 @@ const config = {
     "host": "http://127.0.0.1",
     "port": "8080",
     "rest" : {
-        "size" : "",
+        "size" : "/package/sizes",
         "type" : "/package/types",
         "time" : "",
         "transport" : "",
