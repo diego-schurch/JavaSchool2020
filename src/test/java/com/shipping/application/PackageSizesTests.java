@@ -36,7 +36,7 @@ public class PackageSizesTests {
         when(packageSizeService.getPackageSizes()).thenReturn(testData);
 
         mvc.perform( MockMvcRequestBuilders
-                .get("/package/sizes")
+                .get("/size/")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

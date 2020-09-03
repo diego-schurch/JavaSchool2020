@@ -19,7 +19,7 @@ public class PackageSizeController {
     @Autowired
     private PackageSizeService packageSizeService;
 
-    @GetMapping(value = "/package/sizes", produces= {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(value = "/size/", produces= {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity getAllPackageSizes() throws JsonProcessingException {
 
         List<String> packageSizes = this.packageSizeService.getPackageSizes();
