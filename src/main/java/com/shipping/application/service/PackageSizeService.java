@@ -8,6 +8,6 @@ import java.util.List;
 @Service
 public interface PackageSizeService {
 
-    public List<String> getPackageSizes() throws JsonProcessingException;
+    public List<String> getPackageSizes(String packageType) throws JsonProcessingException;
 
 }

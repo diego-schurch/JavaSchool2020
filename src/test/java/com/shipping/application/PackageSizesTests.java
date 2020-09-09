@@ -29,14 +29,14 @@ public class PackageSizesTests {
     private PackageSizeService packageSizeService;
 
     @Test
-    public void getAllPackageSizes() throws Exception {
+    public void getBoxPackageSizes() throws Exception {
 
         List<String> testData = Arrays.asList("Small", "Medium", "Large");
 
-        when(packageSizeService.getPackageSizes()).thenReturn(testData);
+        when(packageSizeService.getPackageSizes("Box")).thenReturn(testData);
 
         mvc.perform( MockMvcRequestBuilders
-                .get("/size/")
+                .get("/size/Box")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

@@ -19,11 +19,11 @@ public class PackageSizeServiceImpl implements PackageSizeService {
     private PackageSizeDao packageSizeDao;
 
     @Override
-    public List<String> getPackageSizes() throws JsonProcessingException {
+    public List<String> getPackageSizes(String packageType) throws JsonProcessingException {
 
         ArrayList<String> packageSizes = new ArrayList<>();
 
-        for (PackageSizeModel packageSize: this.packageSizeDao.getPackageSizes()) {
+        for (PackageSizeModel packageSize: this.packageSizeDao.getPackageSizes(packageType)) {
             packageSizes.add(packageSize.getDescription());
         }
 

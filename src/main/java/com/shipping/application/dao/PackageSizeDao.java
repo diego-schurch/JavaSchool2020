@@ -14,8 +14,8 @@ public class PackageSizeDao {
     @Autowired
     private PackageSizeRepository packageSizeRepository;
 
-    public List<PackageSizeModel> getPackageSizes() throws JsonProcessingException {
-        return packageSizeRepository.getPackageSizes();
+    public List<PackageSizeModel> getPackageSizes(String packageType) throws JsonProcessingException {
+        return packageSizeRepository.getPackageSizes(packageType);
     }
 
 }

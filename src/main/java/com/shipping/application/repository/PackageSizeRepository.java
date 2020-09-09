@@ -6,7 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.shipping.application.model.PackageSizeModel;
 import com.shipping.application.service.RabbitMQSender;
 import com.shipping.application.util.MessageSerializer;
-import com.shipping.application.util.RequestMessage;
+import com.shipping.application.util.RequestPackageSizeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -20,9 +20,9 @@ public class PackageSizeRepository {
 
     private ObjectMapper mapper = new ObjectMapper();
 
-    public List<PackageSizeModel> getPackageSizes() throws JsonProcessingException {
+    public List<PackageSizeModel> getPackageSizes(String packageType) throws JsonProcessingException {
 
-        String message = MessageSerializer.requestMessageToPlainTextJson(new RequestMessage("packageSize"));
+        String message = MessageSerializer.requestPackageSizeMessageToPlainTextJson(new RequestPackageSizeMessage("packageSizeByType", packageType));
         String receivedMessage = sender.sendRequest(message);
 
         List<PackageSizeModel> packageSizes = mapper.readValue(receivedMessage, new TypeReference<List<PackageSizeModel>>(){});
