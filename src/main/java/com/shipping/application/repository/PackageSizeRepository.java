@@ -16,7 +16,7 @@ import java.util.List;
 public class PackageSizeRepository {
 
     @Autowired
-    RabbitMQSender sender;
+    private RabbitMQSender sender;
 
     private ObjectMapper mapper = new ObjectMapper();
 
@@ -25,9 +25,7 @@ public class PackageSizeRepository {
         String message = MessageSerializer.requestPackageSizeMessageToPlainTextJson(new RequestPackageSizeMessage("packageSizeByType", packageType));
         String receivedMessage = sender.sendRequest(message);
 
-        List<PackageSizeModel> packageSizes = mapper.readValue(receivedMessage, new TypeReference<List<PackageSizeModel>>(){});
-
-        return packageSizes;
+        return mapper.readValue(receivedMessage, new TypeReference<List<PackageSizeModel>>(){});
 
     }
 }

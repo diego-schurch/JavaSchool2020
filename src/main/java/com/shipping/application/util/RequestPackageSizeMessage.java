@@ -16,4 +16,5 @@ public class RequestPackageSizeMessage extends RequestMessage {
         super(type);
         this.packageType = packageType;
     }
+
 }

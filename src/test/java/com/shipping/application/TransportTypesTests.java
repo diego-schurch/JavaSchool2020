@@ -1,7 +1,7 @@
 package com.shipping.application;
 
-import com.shipping.application.controller.PackageSizeController;
-import com.shipping.application.service.PackageSizeService;
+import com.shipping.application.controller.TransportTypeController;
+import com.shipping.application.service.TransportTypeService;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,24 +19,24 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(controllers = PackageSizeController.class)
-public class PackageSizesTests {
+@WebMvcTest(controllers = TransportTypeController.class)
+public class TransportTypesTests {
 
     @Autowired
     private MockMvc mvc;
 
     @MockBean
-    private PackageSizeService packageSizeService;
+    private TransportTypeService transportTypeService;
 
     @Test
-    public void getBoxPackageSizes() throws Exception {
+    public void getAllTransportTypes() throws Exception {
 
-        List<String> testData = Arrays.asList("Small", "Medium", "Large");
+        List<String> testData = Arrays.asList("Land");
 
-        when(packageSizeService.getPackageSizes("Box")).thenReturn(testData.stream());
+        when(transportTypeService.getTransportTypes("Medium")).thenReturn(testData.stream());
 
         mvc.perform( MockMvcRequestBuilders
-                .get("/size/Box")
+                .get("/transport/Medium")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())

@@ -1,6 +1,6 @@
 package com.shipping.application.controller;
 
-import com.shipping.application.service.PackageSizeService;
+import com.shipping.application.service.TransportTypeService;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,15 +12,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class PackageSizeController {
+public class TransportTypeController {
 
     @Autowired
-    private PackageSizeService packageSizeService;
+    private TransportTypeService transportTypeService;
 
-    @GetMapping(value = "/size/{packageSize}", produces= {MediaType.APPLICATION_JSON_VALUE})
-    public ResponseEntity getAllPackageSizes(@PathVariable String packageSize) throws JsonProcessingException {
+    @GetMapping(value = "/transport/{packageSize}", produces= {MediaType.APPLICATION_JSON_VALUE})
+    public ResponseEntity getTransportTypes(@PathVariable String packageSize) throws JsonProcessingException {
 
-        return new ResponseEntity(this.packageSizeService.getPackageSizes(packageSize), HttpStatus.OK);
+        return new ResponseEntity(this.transportTypeService.getTransportTypes(packageSize), HttpStatus.OK);
 
     }
+
 }

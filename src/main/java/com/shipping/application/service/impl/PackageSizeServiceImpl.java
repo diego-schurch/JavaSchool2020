@@ -1,7 +1,5 @@
 package com.shipping.application.service.impl;
 
-import com.shipping.application.dao.PackageSizeDao;
-import com.shipping.application.model.PackageSizeModel;
 import com.shipping.application.repository.PackageSizeRepository;
 
 import com.shipping.application.service.PackageSizeService;
@@ -9,25 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Stream;
 
 @Component
 public class PackageSizeServiceImpl implements PackageSizeService {
 
     @Autowired
-    private PackageSizeDao packageSizeDao;
+    private PackageSizeRepository packageSizeRepository;
 
     @Override
-    public List<String> getPackageSizes(String packageType) throws JsonProcessingException {
+    public Stream<String> getPackageSizes(String packageType) throws JsonProcessingException {
 
-        ArrayList<String> packageSizes = new ArrayList<>();
-
-        for (PackageSizeModel packageSize: this.packageSizeDao.getPackageSizes(packageType)) {
-            packageSizes.add(packageSize.getDescription());
-        }
-
-        return packageSizes;
+        return this.packageSizeRepository.getPackageSizes(packageType).stream()
+                .map(packageSize -> packageSize.getDescription() );
 
     }
 }

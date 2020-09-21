@@ -32,7 +32,7 @@ public class PackageTypesTests {
 
         List<String> testData = Arrays.asList("Box", "Envelop");
 
-        when(packageTypeService.getPackageTypes()).thenReturn(testData);
+        when(packageTypeService.getPackageTypes()).thenReturn(testData.stream());
 
         mvc.perform( MockMvcRequestBuilders
                 .get("/type")

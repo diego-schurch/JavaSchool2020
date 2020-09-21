@@ -1,30 +1,25 @@
 package com.shipping.application.service.impl;
 
-import com.shipping.application.model.PackageTypeModel;
-import com.shipping.application.dao.PackageTypeDao;
+import com.shipping.application.repository.PackageTypeRepository;
 import com.shipping.application.service.PackageTypeService;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Stream;
 
 @Component
 public class PackageTypeServiceImpl implements PackageTypeService {
 
     @Autowired
-    private PackageTypeDao packageTypeDao;
+    private PackageTypeRepository packageTypeRepository;
 
     @Override
-    public List<String> getPackageTypes() throws JsonProcessingException {
-        ArrayList<String> packageTypes = new ArrayList<>();
+    public Stream<String> getPackageTypes() throws JsonProcessingException {
 
-        for (PackageTypeModel packageType: this.packageTypeDao.getPackageTypes()) {
-            packageTypes.add(packageType.getDescription());
-        }
-        return packageTypes;
+        return this.packageTypeRepository.getPackageTypes().stream()
+                .map(packageType -> packageType.getDescription() );
 
     }
 }
