@@ -4,10 +4,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 public interface PackageTypeService {
 
-    public List<String> getPackageTypes() throws JsonProcessingException;
+    public Stream<String> getPackageTypes() throws JsonProcessingException;
 
 }

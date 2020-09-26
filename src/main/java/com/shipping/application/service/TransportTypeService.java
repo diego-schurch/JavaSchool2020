@@ -7,8 +7,8 @@ import java.util.List;
 import java.util.stream.Stream;
 
 @Service
-public interface PackageSizeService {
+public interface TransportTypeService {
 
-    public Stream<String> getPackageSizes(String packageType) throws JsonProcessingException;
+    public Stream<String> getTransportTypes(String packageSize) throws JsonProcessingException;
 
 }

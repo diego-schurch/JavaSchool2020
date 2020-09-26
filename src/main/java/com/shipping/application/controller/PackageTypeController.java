@@ -10,8 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 public class PackageTypeController {
 
@@ -21,8 +19,7 @@ public class PackageTypeController {
     @GetMapping(value = "/type", produces= {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity getAllPackageTypes() throws JsonProcessingException {
 
-        List<String> packageTypes = this.packageTypeService.getPackageTypes();
-        return new ResponseEntity(packageTypes, HttpStatus.OK);
+        return new ResponseEntity(this.packageTypeService.getPackageTypes(), HttpStatus.OK);
 
     }
 
